@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesson 9</title>
+</head>
+<body>
+    
+
+
+    <script>
+        let isPalindrome = function(number) {
+            let reversedNumber = Number(number.toString().split('').reverse().join(''));
+            let result = number + reversedNumber;
+            let reversedResult = Number(result.toString().split('').reverse().join(''));
+
+            if(result === reversedResult) {
+                return true;
+            } else {
+                return isPalindrome(result);
+            }
+
+            return false;
+        }
+
+        console.log(isPalindrome(84));
+    </script>
+</body>
+</html>
