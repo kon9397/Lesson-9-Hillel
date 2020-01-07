@@ -19,11 +19,7 @@
             if(result === reversedResult) {
                 return true;
             } else {
-                if(result >= Number.MAX_SAFE_INTEGER) {
-                    return false;
-                } else {
-                    return isPalindrome(result);
-                }
+                return isPalindrome(result);
             }
         }
 
