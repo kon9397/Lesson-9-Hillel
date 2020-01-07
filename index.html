@@ -12,20 +12,22 @@
 
     <script>
         let isPalindrome = function(number) {
-            let reversedNumber = Number(number.toString().split('').reverse().join(''));
+            let reversedNumber = number.toString().split('').reverse().join('')-0;
             let result = number + reversedNumber;
-            let reversedResult = Number(result.toString().split('').reverse().join(''));
+            let reversedResult = result.toString().split('').reverse().join('')-0;
 
             if(result === reversedResult) {
                 return true;
             } else {
-                return isPalindrome(result);
+                if(result >= Number.MAX_SAFE_INTEGER) {
+                    return false;
+                } else {
+                    return isPalindrome(result);
+                }
             }
-
-            return false;
         }
 
-        console.log(isPalindrome(84));
+        console.log(isPalindrome(196));
     </script>
 </body>
 </html>
