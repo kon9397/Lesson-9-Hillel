@@ -12,18 +12,22 @@
 
     <script>
         let isPalindrome = function(number) {
-            let reversedNumber = number.toString().split('').reverse().join('')-0;
+            function toReverse(number) {
+                return number.toString().split('').reverse().join('')-0;
+            }
+
+            let reversedNumber = toReverse(number);
             let result = number + reversedNumber;
-            let reversedResult = result.toString().split('').reverse().join('')-0;
+            let reversedResult = toReverse(result);
 
             if(result === reversedResult) {
-                return true;
+                return true, result, reversedResult;
             } else {
                 return isPalindrome(result);
             }
         }
 
-        console.log(isPalindrome(196));
+        console.log(isPalindrome(48));
     </script>
 </body>
 </html>
